@@ -50,43 +50,61 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-black font-roboto text-digital-white overflow-hidden">
+      {/* Background Elements */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-digital-orange rounded-full opacity-20 floating-shape"></div>
+        <div
+          className="absolute top-40 right-20 w-24 h-24 bg-digital-blue rounded-lg opacity-30 floating-shape"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-40 left-1/4 w-16 h-16 bg-digital-orange rounded-full opacity-25 floating-shape"
+          style={{ animationDelay: "4s" }}
+        ></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Icon name="Zap" size={16} className="mr-2" />
+      <section className="relative z-10 digital-gradient min-h-screen flex items-center py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center bg-black/20 backdrop-blur-sm text-digital-white px-6 py-3 rounded-full text-sm font-medium mb-8 neon-glow">
+            <Icon name="Zap" size={16} className="mr-2 text-digital-orange" />
             Старт новой группы через 3 дня
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Стань <span className="text-orange-400">SMM-экспертом</span>
+
+          <h1 className="font-exo text-6xl md:text-8xl font-extrabold mb-8 leading-tight">
+            Стань{" "}
+            <span className="neon-text text-digital-orange">SMM-экспертом</span>
             <br />
             за 8 недель
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+
+          <p className="font-roboto text-xl md:text-2xl mb-12 text-digital-white/90 max-w-4xl mx-auto font-light">
             Практический курс по продвижению в социальных сетях. От стратегии до
             первых продаж
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 flex items-center">
-              <Icon name="Play" size={20} className="mr-2" />
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button className="bg-digital-orange hover:bg-digital-orange/90 text-black px-10 py-5 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 flex items-center neon-glow font-exo">
+              <Icon name="Play" size={24} className="mr-3" />
               Начать обучение
             </button>
-            <div className="text-blue-200">
-              <div className="flex items-center justify-center mb-1">
-                <Icon name="Users" size={16} className="mr-1" />
-                <span className="text-sm">2,847 выпускников</span>
+
+            <div className="text-digital-white/80">
+              <div className="flex items-center justify-center mb-2">
+                <Icon name="Users" size={18} className="mr-2" />
+                <span className="font-roboto">2,847 выпускников</span>
               </div>
               <div className="flex items-center justify-center">
                 {[...Array(5)].map((_, i) => (
                   <Icon
                     key={i}
                     name="Star"
-                    size={16}
-                    className="text-yellow-400 fill-current"
+                    size={18}
+                    className="text-digital-orange fill-current"
                   />
                 ))}
-                <span className="ml-2 text-sm">4.9 из 5</span>
+                <span className="ml-2 font-roboto">4.9 из 5</span>
               </div>
             </div>
           </div>
@@ -94,13 +112,13 @@ const Index = () => {
       </section>
 
       {/* Course Program */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <section className="relative z-10 py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-exo text-5xl font-bold text-digital-white mb-6 neon-text">
               Программа курса
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="font-roboto text-xl text-digital-white/70">
               4 модуля • 32 урока • 8 недель практики
             </p>
           </div>
@@ -109,26 +127,26 @@ const Index = () => {
             {modules.map((module, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-digital-blue/30 hover:border-digital-orange/50 transition-all duration-300 pulse-glow"
               >
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 digital-gradient rounded-xl flex items-center justify-center text-digital-white font-bold text-xl font-exo neon-glow">
                     {index + 1}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 ml-4">
+                  <h3 className="font-exo text-2xl font-bold text-digital-white ml-6">
                     {module.title}
                   </h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {module.lessons.map((lesson, lessonIndex) => (
                     <li
                       key={lessonIndex}
-                      className="flex items-center text-gray-700"
+                      className="flex items-center text-digital-white/80 font-roboto"
                     >
                       <Icon
                         name="CheckCircle"
-                        size={16}
-                        className="text-blue-600 mr-3 flex-shrink-0"
+                        size={18}
+                        className="text-digital-orange mr-4 flex-shrink-0"
                       />
                       {lesson}
                     </li>
@@ -141,41 +159,48 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <section className="relative z-10 py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-exo text-5xl font-bold text-digital-white mb-6 neon-text">
               Отзывы студентов
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="font-roboto text-xl text-digital-white/70">
               Реальные результаты наших выпускников
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
+              <div
+                key={index}
+                className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-digital-blue/20 hover:border-digital-orange/40 transition-all duration-300"
+              >
                 <div className="flex items-center mb-6">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-digital-orange/50"
                   />
                   <div className="ml-4">
-                    <h4 className="font-bold text-gray-900">
+                    <h4 className="font-exo font-bold text-digital-white text-lg">
                       {testimonial.name}
                     </h4>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                    <p className="text-digital-white/60 text-sm font-roboto">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">"{testimonial.text}"</p>
-                <div className="flex mt-4">
+                <p className="text-digital-white/80 italic font-roboto leading-relaxed">
+                  "{testimonial.text}"
+                </p>
+                <div className="flex mt-6">
                   {[...Array(5)].map((_, i) => (
                     <Icon
                       key={i}
                       name="Star"
                       size={16}
-                      className="text-yellow-400 fill-current"
+                      className="text-digital-orange fill-current"
                     />
                   ))}
                 </div>
@@ -186,115 +211,98 @@ const Index = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-bold mb-8 inline-block">
+      <section className="relative z-10 py-24 px-4 digital-gradient">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="bg-black/30 backdrop-blur-sm text-digital-white px-8 py-4 rounded-full text-lg font-bold mb-12 inline-block neon-glow font-exo">
             🔥 Скидка 50% до конца недели
           </div>
-          <h2 className="text-4xl font-bold text-white mb-8">
+
+          <h2 className="font-exo text-5xl font-bold text-digital-white mb-12 neon-text">
             Выберите свой тариф
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Basic Plan */}
-            <div className="bg-white p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Базовый</h3>
-              <div className="mb-6">
-                <div className="text-gray-500 line-through text-lg">
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm p-10 rounded-2xl border border-digital-blue/30">
+              <h3 className="font-exo text-3xl font-bold text-digital-white mb-6">
+                Базовый
+              </h3>
+              <div className="mb-8">
+                <div className="text-digital-white/50 line-through text-xl font-roboto">
                   ₽39,900
                 </div>
-                <div className="text-4xl font-bold text-blue-600">₽19,900</div>
-                <div className="text-gray-600">Доступ к курсу на 6 месяцев</div>
+                <div className="text-5xl font-bold text-digital-blue font-exo">
+                  ₽19,900
+                </div>
+                <div className="text-digital-white/70 font-roboto">
+                  Доступ к курсу на 6 месяцев
+                </div>
               </div>
-              <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  32 видеоурока
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Домашние задания
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Чат с кураторами
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Сертификат о прохождении
-                </li>
+              <ul className="text-left space-y-4 mb-10">
+                {[
+                  "32 видеоурока",
+                  "Домашние задания",
+                  "Чат с кураторами",
+                  "Сертификат о прохождении",
+                ].map((feature, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center font-roboto text-digital-white/80"
+                  >
+                    <Icon
+                      name="Check"
+                      size={18}
+                      className="text-digital-orange mr-3"
+                    />
+                    {feature}
+                  </li>
+                ))}
               </ul>
-              <button className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <button className="w-full bg-digital-blue/80 hover:bg-digital-blue text-digital-white py-4 rounded-xl font-semibold transition-all transform hover:scale-105 font-exo text-lg">
                 Выбрать тариф
               </button>
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-white p-8 rounded-xl border-4 border-orange-500 relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm p-10 rounded-2xl border-4 border-digital-orange/50 relative neon-glow">
+              <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-digital-orange text-black px-6 py-3 rounded-full text-sm font-bold font-exo">
                 Популярный
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Премиум</h3>
-              <div className="mb-6">
-                <div className="text-gray-500 line-through text-lg">
+              <h3 className="font-exo text-3xl font-bold text-digital-white mb-6">
+                Премиум
+              </h3>
+              <div className="mb-8">
+                <div className="text-digital-white/50 line-through text-xl font-roboto">
                   ₽69,900
                 </div>
-                <div className="text-4xl font-bold text-orange-500">
+                <div className="text-5xl font-bold text-digital-orange font-exo neon-text">
                   ₽34,900
                 </div>
-                <div className="text-gray-600">Доступ к курсу навсегда</div>
+                <div className="text-digital-white/70 font-roboto">
+                  Доступ к курсу навсегда
+                </div>
               </div>
-              <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Все из базового тарифа
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Индивидуальные консультации
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Помощь в трудоустройстве
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Доступ к закрытому комьюнити
-                </li>
+              <ul className="text-left space-y-4 mb-10">
+                {[
+                  "Все из базового тарифа",
+                  "Индивидуальные консультации",
+                  "Помощь в трудоустройстве",
+                  "Доступ к закрытому комьюнити",
+                ].map((feature, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center font-roboto text-digital-white/80"
+                  >
+                    <Icon
+                      name="Check"
+                      size={18}
+                      className="text-digital-orange mr-3"
+                    />
+                    {feature}
+                  </li>
+                ))}
               </ul>
-              <button className="w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+              <button className="w-full bg-digital-orange hover:bg-digital-orange/90 text-black py-4 rounded-xl font-semibold transition-all transform hover:scale-105 neon-glow font-exo text-lg">
                 Выбрать тариф
               </button>
             </div>
@@ -303,20 +311,22 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="relative z-10 bg-black py-16 px-4 border-t border-digital-blue/20">
         <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">Остались вопросы?</h3>
-          <p className="text-gray-300 mb-6">
+          <h3 className="font-exo text-3xl font-bold mb-6 text-digital-white">
+            Остались вопросы?
+          </h3>
+          <p className="text-digital-white/60 mb-8 font-roboto text-lg">
             Напишите нам в Telegram и получите консультацию
           </p>
           <a
             href="https://t.me/smm_course_support"
-            className="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+            className="inline-flex items-center bg-digital-blue hover:bg-digital-blue/90 text-digital-white px-10 py-5 rounded-xl font-semibold transition-all transform hover:scale-105 pulse-glow font-exo text-lg"
           >
-            <Icon name="MessageCircle" size={20} className="mr-2" />
+            <Icon name="MessageCircle" size={24} className="mr-3" />
             Написать в Telegram
           </a>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-gray-400 text-sm">
+          <div className="mt-12 pt-8 border-t border-digital-blue/20 text-digital-white/40 text-sm font-roboto">
             <p>© 2024 SMM Академия. Все права защищены.</p>
           </div>
         </div>
